@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only color="royal" (click)="navigateToReminder()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card *ngIf="!reminderList.length">
+    <ion-item>
+      <ion-avatar item-left>
+        <img src="assets/images/clock.png" />
+      </ion-avatar>
+      <h2>You don't have any reminders.</h2>
+
+    </ion-item>
+  </ion-card>
+  <ion-card *ngFor="let item of reminderList">
+    <ion-item>
+      <ion-avatar item-left>
+        <img src="{{item.avatar}}" />
+      </ion-avatar>
+      <h2>{{item.name}}</h2>
+      <p>{{item.date}} to {{item.endDate}}</p>
+      <span>
+      
+      </span>
+    </ion-item>
+  </ion-card>
+
+</ion-content>
